@@ -1,0 +1,981 @@
+welcomeModal:
+  title: Welcome to Litmus Portal,
+  info: What do you want to name your project?
+  button:
+    continue: Continue
+    back: Back
+    letsStart: Let's Start
+  case-0:
+    name: projectName
+    label: Project Name
+    info: What do you want to name your project?
+  case-1:
+    name: fullName
+    label: Full Name
+    info: What should I call you?
+  case-2:
+    name: password
+    label: Password
+    cnfLabel: Confirm Password
+    cnfName: confirmPassword
+    info: Set your new Password
+  case-3:
+    name: emailAddress
+    label: Email Address
+    info: You can set your current mail
+
+###########################################
+############    Components    #############
+###########################################
+
+sidebar:
+  title: Litmus
+  version: 'Version: 1.13'
+
+header:
+  projectDropdown:
+    myProjects: My Projects
+    noMyProjects: No projects owned by you
+    otherProjects: Other Projects
+    noProjectsOther: You are not part of any projects not owned by you
+  profileDropdown:
+    signedIn: 'Signed in as:'
+    emailUnset: Email not set
+    emailSet: Set up your email
+    goToSettingsTitle: Go to settings
+    logOutTitle: Logout from the portal
+    editProfileTitle: Edit your profile
+    logout: Logout
+    editProfile: Edit Profile
+
+button:
+  backButton: Back
+
+quickActionCard:
+  quickActions: Quick Actions
+  inviteTeamMember: Invite a team member
+  quickSurvey: Take a quick survey
+  readDocs: Read the Litmus docs
+  readAPIDocs: Read the Litmus Portal API docs
+  addDashboard: Add a Dashboard
+  addDataSource: Add a Data Source
+  addAgent: Add an agent
+  connectNewAgent: Connect a new agent
+  scheduleWorkflow: Schedule a workflow
+
+customWorkflowCard:
+  customWorkflow: Create your own workflow
+  infraChaos: Infra-Chaos
+
+workflowStepper:
+  continueError: To continue, please check the error in code.
+  scheduleNewChaosWorkflow: Schedule a new chaos workflow
+  aNewChaosWorkflow: A new chaos workflow,
+  successful: is successfully created!
+  congratulationsSub1: Congratulations on creating your workflow! Now information about
+  congratulationsSub2: it will be displayed on the workflow schedules.
+  error: Error
+  workflowFailed: Failed to create a new workflow.
+  workflowBtn: Go to Workflow
+  step1:
+    errorSnackbar: You haven't selected any Target Agent
+  step2:
+    errorSnackbar: Please select a workflow type
+  step3:
+    errorSnackbar: Please provide a valid Workflow Name
+  finish: Finish
+  next: Next
+  backBtn: Back
+
+######################################
+############    Pages    #############
+######################################
+
+home:
+  workflow:
+    heading: Let's Start
+    info: Schedule your first workflow
+  heading: Welcome,
+  subHeading1: Congratulations!
+  subHeading2: You have established your first project on the Litmus portal.
+  subHeading3: Now it is successfully running on your Kubernetes cluster. Once you have scheduled your chaos workflows, reliability analytics will be displayed here.
+  button1: See pre-defined workflows
+  analytics:
+    heading: How busy is the Litmus Project?
+    moreInfo: See more
+  comingSoon: Coming soon !
+  resilienceScore: Resilience score
+  recentActivity: Recent activity
+  resilienceScoreComparisonOptions:
+    option1: Hourly
+    option2: Daily
+    option3: Monthly
+    granularity: Granularity
+  recentActivityEmpty: No recent activity.
+  NonAdmin:
+    noAgent: No LitmusChaos Agent has been discovered on any cluster.
+    agentDeployInfo: To configure your workflow you need to deploy an agent. Click on “Deploy your first Agent” to continue.
+    chaosAgent: Deploy LitmusChaos agent on your Kubernetes clusters.
+    agents: Agents
+    agent: Agent
+    chaosAgentInfo: Cloud native chaos engineering can be setup on this cluster using LitmusChaos
+    deployFirst: Deploy your first Agent
+    toProjects: To Projects
+    toAnalytics: To Analytics
+    deploy: Deploy another Agent
+
+login:
+  heading: Welcome to <strong>Litmus!</strong>
+  subHeading1: Your one-stop-shop for Chaos Engineering on
+  subHeading2: . Browse, create, manage, monitor and analyze your chaos workflows.
+  subHeading3: With your own private ChaosHub, you can create your new chaos experiments and share them with your team.
+  passwordForgot: Don’t remember your password?
+
+schedule:
+  heading: 'Schedule a workflow'
+  headingDesc: 'Click on test to see detailed log of your workflow'
+  headingText: 'Schedule details:'
+  description: 'Choose the right time to schedule your first workflow. Below you can find some options that may be convenient for you.'
+  save: 'Save Changes'
+  scheduleNow: Schedule now
+  scheduleAfter: Schedule after some time
+  scheduleAfterSometime: 'Choose the minutes, hours, or days when you want to start workflow'
+  scheduleSpecificTime: Schedule at a specific time
+  scheduleFuture: Select date and time to start workflow in future
+  scheduleRecurring: Recurring Schedule
+  scheduleRecurringTime: Choose the right recurring time to start your workflow
+  after: After
+  at: at
+  At: At
+  scheduleOn: 'On'
+  missingPerm: Missing sufficient permissions :(
+  requiredPerm: Looks like you do not have the required permission to create a new workflow on this project.
+  contact: Contact portal administrator to upgrade your permission.
+  chaosWorkflow: Chaos workflow,
+  successful: was successfully updated!
+  congratulationsSub1: Chaos workflow updated successfully! Now information about
+  congratulationsSub2: it will be displayed on the workflow schedules.
+  workflowBtn: Go to Workflow
+  backBtn: Go Back
+
+community:
+  title: 'Community'
+  heading: 'Litmus Insights'
+  headingDesc: 'Stats for the Litmus community'
+  analyticDesc: 'Periodic growth of Litmus'
+  statsHeading: 'Litmus users around the world:'
+  litmusChaos: Litmuschaos
+  follow: Follow
+
+analytics:
+  fetchError: An error has occurred while fetching the data
+  viewTestResult: Click on test to view the results for the selected period
+  comingSoon: Analytics Coming Soon !
+  waitingMessage: Waiting for workflow to start running !
+  chaosCompleteWaitingMessage: Waiting for chaos experiment to finish !
+  highestScore: 'Highest Score:'
+  lowestScore: 'Lowest Score:'
+  exportPDF: Export PDF
+  compareWorkflows: Compare workflows
+  targetCluster: Target cluster
+  workflowSelected: workflow selected
+  workflowsSelected: workflows selected
+  tableHead1: Workflow Name
+  tableHead2: Starting Date
+  tableHead3: Regularity
+  tableHead4: Cluster
+  workflowRunDetailsTable:
+    tableHead1: Test Name
+    tableHead2: Test Result
+    tableHead3: Weight of the test
+    tableHead4: Resulting Points
+    tableHead5: Last run
+    close: Close
+
+analyticsDashboard:
+  heading: Analytics
+  overview: Overview
+  monitoringDashboardPage:
+    dataSourceError: Reconfigure this dashboard with a different data source or update data source information.
+    reConfigureDashboard: Re-configure dashboard
+    updateDataSource: Update data source
+  workflowClusterDashboard:
+    title: Dashboard
+    tab1: Hourly
+    tab2: Daily
+    tab3: Monthly
+    tab4: Yearly
+    worflowSchedulesTitle: Workflow Schedules
+    clusterCountTitle: Clusters
+    timeSelectionMessage: Overview of latest
+    timeSelection0: Hour
+    timeSelection1: Day
+    timeSelection2: Month
+    scheduleWorkflowMessage: Schedule my first workflow
+  seeAll: See All
+  seeDetails: See Details
+  seeAnalytics: See Analytics
+  workflowStats:
+    title: Workflow stats
+    workflowPassed: Passed
+    workflowRunning: Running
+    workflowFailed: Failed
+  workflowScheduleTable:
+    title: Workflow Schedules
+    noRecordMessage: No workflow has been schedule
+  kubernetesDashboardTable:
+    title: Application Dashboard
+    noRecordMessage: No dashboard has been configured
+  workflowDashboard: Workflow Dashboards
+  overviewTabdataSourceTable: Connected Data Sources
+  applicationDashboard: Application Dashboards
+  connectedDataSources: Connected Data Sources
+  dataSource: Data sources
+  dataSourceTable:
+    tableHead1: Status
+    tableHead2: Data Source Name
+    tableHead3: Data Source Type
+    tableHead4: Last Configured
+    addDataSource: Add a Data Source
+    loading: Loading available data sources
+    noRecords: No data source available
+    fetchError: Unable to fetch data
+  dashboardTable:
+    tableHead1: Dashboard Name
+    tableHead2: Agent Name
+    tableHead3: Dashboard Type
+    tableHead4: Data Source Type
+    tableHead5: Last viewed
+    addDashboard: Add a Dashboard
+  glowCard:
+    title-0: Set it up
+    heading-0: Add a Data Source
+    title-1: Let's start!
+    heading-1: Configure a new chaos interleaved dashboard
+  scheduleWorkflowCard:
+    mainHeading-0: Schedule your
+    mainHeading-1: Workflow
+    mainHeading-2: now
+    subHeading: Worflow dashboards are available once the workflows are run
+    description: Create complex chaos workflow, automate them and monitor the variations in resilience levels. You can use this Kubernetes cluster to create new reliability workflows and compliance reports
+    buttonText: Schedule a workflow
+  configureBanner:
+    case-0:
+      heading: No data source is configured yet for any agent
+      description: To configure your first Kubernetes dashboard you need to connect a data source. Select "Add a data source" to connect.
+    case-1:
+      heading: Data sources has been added, now configure a dashboard
+      description: To configure your first Kubernets dashboard use the connect Data sources of this project
+  timeText:
+    lastRun: Last run
+    lastOpened: Last opened
+    lastConfigured: Last configured
+    ago: ago
+    seconds: seconds
+    minute: minute
+    minutes: minutes
+    hour: hour
+    hours: hours
+    day: day
+    days: days
+    few: few
+
+error:
+  whoops: Whoops!
+  pageUnavailable: This page is unavailable
+  pageDoesNotExist: The page does not exist, or please try again later.
+  goBack: Go back
+
+workflowDetails:
+  detailedLog: Click on Info to see details of your workflow
+  fetchError: An error has occurred while fetching the data
+  overallRR: 'Overall RR: '
+
+######################################
+############    Views    #############
+######################################
+
+chaosWorkflows:
+  browseAnalytics:
+    workFlowComparisonTable:
+      unableToFetch: Unable to fetch data
+      noRecords: No records available
+      noRuns: No workflow runs available for selected workflows
+      showSelectedWorkflows: Show all selected workflows
+      resilienceScoreComparison: Resilience score comparison
+      comparativeResults: Comparative results of selected workflows which ran successfully
+      once: Once
+      seeAnalytics: See analytics
+  browseSchedule:
+    regularityOnce: Once
+    showExperiment: Show Experiment
+
+analyticsDashboardViews:
+  kubernetesDashboard:
+    form:
+      dashboardPanels: Dashboard Panels
+    table:
+      seeAnalytics: See Analytics
+      configure: Configure
+      noRecords: No dashboard available
+      loading: Loading available dashboards
+      error: Unable to fetch data
+
+settings:
+  accountsTab:
+    personalDetails:
+      modal:
+        header: Your personal information
+        headerStrong: has been changed!
+        headerErr: while updating details.
+        headerErrStrong: Error
+        info: Changes took effect
+      button:
+        saveChanges: Save Changes
+        done: Done
+    accountsSettings:
+      header: Password
+      passwordValidation: Should not start with empty space
+      passwordNotSame: Password is not same
+      modal:
+        header: Your password
+        headerStrong: has been changed!
+        headerErr: while changing the password.
+        info: You can now use your new password to login to your account
+        headerErrStrong: Error
+      label:
+        currPassword: Current Password
+        newPassword: New Password
+        confNewPassword: Confirm Password
+      button:
+        changePass: Change Password
+        done: Done
+
+  teamingTab:
+    projects: Projects
+    project: Project
+    yourProject: Your Project
+    projectInvite: Projects by invite
+    invitations: Invitations
+    active: Active
+    manageTeam: Manage your team, invite a member to your project or change the role of members in the team
+    header: Members
+    invitedProject: Projects you were invited to
+    noUsers: No users available
+    label:
+      search: Search...
+      role: Role
+      options:
+        all: All
+        owner: Owner
+        editor: Editor
+        viewer: Viewer
+    tableCell:
+      name: Name
+      role: Role
+      email: Email
+      joined: Joined to team
+      status: Status
+    deleteModal:
+      header: Are you sure you want to remove the invitation to
+      text: the current user?
+      body: The user will lose access to the team’s work.
+      yesButton: Yes
+      noButton: No
+    deleteUser:
+      header: Are you sure
+      text: to remove the current user?
+      body: The user will lose access to the team’s work
+      yesButton: Yes
+      noButton: No
+    inviteNew:
+      header: Invite new member
+      invite:
+        header: Invite
+        headerStrong: new member
+        successHeader: Invitation
+        successHeaderStrong: sent successfully
+        info: You have successfully sent the invitation. After confirmation user will be added to the existing list of member.
+        noUsers: No users available.
+        label:
+          someone: Invite someone
+        button:
+          done: Done
+          send: Send Invite
+    invitation:
+      button:
+        invitation: Invitation
+      modal:
+        header: Manage
+        headerStrong: invitations
+      receivedInvitation:
+        noInvites: No invitations received.
+        button:
+          accept: Accept
+          ignore: Decline
+          leave: Leave Project
+        inviteTextFirst: has invited you as
+        inviteTextSecond: to the project
+        receivedHeading:
+          You have been invited to the following projects. Once accepted,
+          they will be available to browse on the top right section of
+          the portal.
+      sentInvitation:
+        resend: Resend
+        noInvites: There is no one waiting for your invitation.
+        menuItem:
+          editorRole:
+            label: Editor
+            body: Can make changes in the project
+          viewerRole:
+            label: Viewer
+            body: Can view the project
+      acceptedInvitation:
+        viewProject: View Project
+        role: Role
+
+  userManagementTab:
+    header: Members
+    info: Create users, manage them and reset their password and username when required
+    editProfile: Edit Profile
+    noUsers: No users available.
+    button:
+      create: Create new user
+    label:
+      search: Search...
+      userStatus: User Status
+      options:
+        all: All
+        signedIn: Signed in
+        notSignedIn: Not Signed in
+    tableCell:
+      status: Status
+      username: Username
+      email: Email
+      userCreated: User Created
+    createUser:
+      header: Create a new user
+      info: Enter the user's personal and login details
+      login: Login Details
+      label:
+        username: Username
+        newPassword: New Password
+      userDetails:
+        header: Personal Details
+        button: Edit Photo
+        label:
+          fullName: Full Name
+          email: Email Address
+          username: Username
+        validationEmptySpace: Should not start with an empty space
+      chooseAvatarModal:
+        title: Change your Avatar
+        info: You can now use your new password to login to your account
+        button: Choose an avatar
+      newUserModal:
+        header: A new user
+        headerInfo: was successfully created
+        headerErr: while creating a new user.
+        error: Error
+        info: Now information about the user will be displayed on the user management screen of the application.
+        button:
+          done: Done
+          create: Create
+    editUser:
+      header: Edit user profile
+      info: Edit the user's login details
+      login: Login Details
+      label:
+        newPassword: New Password
+      resetModal:
+        header: The user’s password was
+        headerStrong: successfully reset
+        headerErr: while resetting password.
+        info: The user needs to login with the new credentials.
+        error: Error
+        button:
+          save: Save
+          done: Done
+      deleteUser:
+        deleteModal:
+          body: The user will lose access to the portal
+  gitopsTab:
+    choose: Choose where to store the Workflow configuration
+    locally: Locally in Litmus
+    disconnect: Are you sure you want to disconnect?
+    save: Save Locally
+    repo: Git Repository
+    desc: '* Any existing or active workflows saved locally will not be synced into the git repository'
+    connect: Connect
+    branch: Branch
+    URL: Git URL
+    setting: Back to settings
+    editHeader: Are you sure you want to edit the GitOps configuration?
+    editDescription: This will affect all the workflows. Few of the workflows may not work as expected.
+    edit: Edit
+    cancel: Cancel
+    proceed: Yes, proceed
+
+workflowDetailsView:
+  headerDesc: Workflow dashboard of
+  headerMiniDesc: Description of the workflow
+  argoWorkflow:
+    loading: Loading Graph...
+    controls:
+      horizontal: Horizontal
+      vertical: Vertical
+  nodeLogs:
+    fetching: Fetching Logs...
+    mainLogs: Main logs unavailable
+    couldNot: Could not get logs
+    chaosLogs: Chaos logs unavailable
+  workflowInfo:
+    header: Overall Workflow Description
+    resilienceScore: Resilience Score
+    runTime:
+      runTimeHeader: Run Time
+      startTime: 'Start Time :'
+      endTime: 'End Time :'
+    hostedOn:
+      hostedOnHeader: Hosted On
+      cluster: 'Cluster :'
+      namespace: 'Namespace :'
+    targets:
+      targetsHeader: Targets
+      cluster: 'Cluster :'
+      namespace: 'Namespace :'
+    application: 'Application :'
+  workflowNodeInfo:
+    name: Name
+    type: Type
+    phase: Phase
+    startTime: Start Time
+    endTime: End Time
+    duration: Duration
+    viewPairs: View the key value pairs
+    viewApplicationDetails: View the application details
+  tableView:
+    tableHeader:
+      stepName: Step Name
+      status: Status
+      duration: Duration
+      startTime: Start Time
+      applicationDetails: Application Details
+    showProperties: Show properties
+    viewLogs: View Logs & Results
+    nodeName: Step Name
+    button:
+      logs: Logs
+      result: Chaos Result
+
+homeView:
+  averageResilienceScore:
+    header: Average Resilience Score
+    desc: Based on results of completed tests
+  passedVsFailed:
+    header: Passed Vs Failed
+    desc: Statistics taken from completed tests
+  totalWorkflows:
+    header: Number of total Workflows
+    subtitle: AVG amount of workflows
+    perWeek: per week
+    desc: AVG is calculated from the max of workflows
+
+createWorkflow:
+  chooseWorkflow:
+    title: Start creating your chaos workflow
+    subtitle: Simulate the workflow run and see the suggested reliability score
+    header: Select or design workflow
+    info: Select one of the pre-defined chaos workflows or design your own workflow.
+    preDefined: pre-defined workflows
+    saved: Name saved as
+    modalHeading: Create your
+    modalHeadingStrong: workflow name
+    settings: Workflow Settings
+    descriptionA: You have selected a pre-defined workflow
+    descriptionB: You have selected an existing workflow
+    descriptionC: You have selected a MyHub workflow
+    descriptionD: You have imported a workflow YAML
+    description2: Provide a name and description to the new workflow.
+    edit: Edit Photo
+    changeImage: Change workflow logo
+    changeImgDescription: You can choose a logo from given below
+    saveChanges: Save Changes
+    imageNotChanged: You have not changed the image.
+    continue: Do you want to continue?
+    continueBtn: Continue
+    validate: Workflow name can only contain - and alphanumeric characters
+    selectMyHub: Select MyHub
+    label:
+      workflowName: Workflow name
+      desc: Description
+    button:
+      edit: Edit workflow name
+      cancel: Cancel
+      save: Save
+  reliabilityScore:
+    header: Adjust the weights of the experiments in the workflow
+    info: You have selected
+    infoNext: tests in the “Kubernetes conformance test” workflow. Successful outcome of each test carries a certain weight. We have pre-selected weights for each test for you. However, you may review and modify the weightage against.
+    infoNextStrong: The weights are relative to each other.
+    testHeading: Kubernetes conformance test
+    testInfo: Compare the importance of the items above and launch a demo version of Kubernetes conformance test to see how it works.
+    button:
+      demo: Demo Launch
+      gotIt: Got it
+    resultTable:
+      header: Simulate the workflow run and see the suggested reliability score
+      headerDesc: workflow1 K8S conformance test on Ignite cluster
+      info: Tips from Litmus Portal
+      tips: When you set the test result, then pay attention to the total values of the total score. This will help you in setting up your tests, getting the maximum result and the correct operation of the test in the future.
+      points: points
+      totalScore: Total Score
+      reliabilityScore: Reliability score
+      tableCell:
+        testName: Test Name
+        testResult: Test Result
+        testWeight: Weight of test
+        testPoints: Test Points
+  scheduleWorkflow:
+    header: Choose a chaos schedule
+    info: Choose the right time to start your first workflow. Below your first workflow. Below you can find any option convenient for you.
+    min: min
+    mins: mins
+    at: at
+    on: On
+    every:
+      hr: Every Hour
+      day: Every Day
+      week: Every Week
+      month: Every Month
+    radio:
+      now: Schedule now
+      specific: Schedule at a specific time
+      future: Select date and time to start workflow in future
+      recurr: Recurring Schedule
+      rightRecurr: Choose the right recurring time to start your workflow
+    modalHeader: Are you sure you want to delete this Schedule
+    modalSubheader: This action is irreversible
+    cancelBtn: Cancel
+    deleteBtn: Delete
+  toggleComponent:
+    pass: Pass
+    fail: Fail
+  tuneWorkflow:
+    header: Tune the selected workflow
+    selectedWorkflowInfo: You have selected a pre-defined workflow
+    description: Fine tune the application  names and other variables to suit your needs    
+    view: View YAML
+    firstExperiment: Add your first experiment
+    choose: Choose Experiments
+    selectAvailableExp: Select experiments available in
+    afterSelect: After selecting you can fine tune them.
+    selectExp: Select An Experiment
+    done: Done
+    editSequence: Edit Sequence
+    addANewExperiment: Add a new experiment
+    addProbe:
+      heading: Add
+      headingStrong: Probe
+      labels:
+        probeName: Probe Name
+        probeType: Probe Type
+        probeMode: Probe Mode
+        probeDetails: Probe Details
+        probeProp: Probe Properties
+        timeout: Timeout
+        retry: Retry
+        interval: Interval
+        polling: Polling interval
+        initialDelay: Initial Delay Seconds
+        url: URL
+      button:
+        cancel: Cancel
+        addProbe: Add Probe
+      inputLabels:
+        url: URL
+        insecure: Insecure Skip Verify
+        method: Method
+        body: Body
+        request: Request
+        contentType: Content Type
+        criteria: Criteria
+        responseCode: Response Code
+        command: Command
+        source: Source
+        comparator: Comparator
+        type: Type
+        value: Value
+        operation: Operation
+        group: Group
+        version: Version
+        resource: Resource
+        namespace: Namespace
+        fieldSel: FieldSelector
+        labelSel: LabelSelector
+        endpoint: Endpoint
+        query: Query
+      select:
+        http: http
+        cmd: cmd
+        k8s: k8s
+        prom: prom
+        sot: SOT
+        eot: EOT
+        edge: Edge
+        onchaos: OnChaos
+        continuous: Continuous
+  verifyCommit:
+    header: Confirmation of Results
+    info: Before committing the workflow changes to your, verify and if needed go back to a corresponding section of the wizard to modify.
+    error: Invalid Workflow CRD found ! Please correct the errors.
+    errYaml: Error in CRD Yaml.
+    codeIsFine: Your code is fine.
+    youCanMoveOn: You can move on !
+    button:
+      edit: Edit
+      viewYaml: View YAML
+    summary:
+      header: Summary
+      workflowName: Workflow name
+      desc: Description
+      schedule: Schedule
+      disabled: Currently Disabled
+      schedulingNow: Scheduling now
+      adjustedWeights: Adjusted Weights
+      clustername: Cluster Name
+  workflowCluster:
+    activeCluster: Choose an active cluster
+    none: None
+
+######################################
+############    Targets    ###########
+######################################
+
+targets:
+  connectHome:
+    head: Targets
+    connectText: Connect the Target
+  copy:
+    copy: Copy
+    copied: Copied
+    copying: Command copied to clipboard
+  newTarget:
+    head: Connect a new target on your devices
+    head1: Open the cluster console
+    head2: Download litmusctl
+    head3: Paste and Run the following command into the cluster console
+  modalDelete:
+    head1: Are you sure to
+    head2: disconnect the current
+    head3: It will be disconnect forever
+    head4: Agent?
+    disconnect: Disconnect
+    yes: Yes
+    no: No
+
+connectTargets:
+  title: A new Target,
+  head: is successfully created!
+  info: Congratulations on connecting a new target! Now information about it
+  mainLine: will be displayed on "Targets".
+  button:
+    buttonBack: Back to Targets
+    buttonSchedule: Schedule a workflow
+workflowCluster:
+  header:
+    status: Current Status
+    target: Target Cluster
+    chooseAgent: Choose the target Kubernetes Agent
+    creatingNew: You are creating a
+    creatingNewBold: new chaos workflow.
+    selectAgent: Select a target Kubernetes Agent to run this workflow.
+    selectCluster: Choose Active Cluster
+    select: Select and Continue
+    snackbar: No Cluster Registered With Your Project ID, Please Wait...
+    formControl:
+      # For Header
+      menu: All
+      menu1: Active
+      menu2: Not active
+      menu4: Internal
+      menu5: External
+      menu6: Pending
+      # For Table
+      tableStatus: Status
+      tableCluster: Target Agent
+      name: Name
+      time: Time
+      run: Last Workflow run
+      connectionDate: Connection Date
+      noWorkflows: No. of Workflows
+      noSchedules: No. of Schedules
+      fetchingError: Unable to fetch data
+      recordAvailable: No records available
+      disconnect: Disconnect
+      clusterInfo: Cluster information
+      about: About Litmus Cluster
+      back: Back
+workflowAgent:
+  header:
+    chooseAgent: Choose Agent to send the chaos workflow to
+    creatingNew: You are creating a new chaos workflow
+    selectAgent: Select a target Kubernetes cluster to run this workflow
+  search:
+    placeholder: Search
+
+workflows:
+  browseWorkflows: Browse workflows
+  schedules: Schedules
+  templates: Templates
+  analytics: Analytics
+  scheduleAWorkflow: Schedule a workflow
+
+#########################################
+############    dataErrors    ###########
+#########################################
+
+internetIssues:
+  fetchData: 'Fetching the data...'
+  connectionError: It seems you have no internet connection, Please try again When connectivity resumes.
+
+######################################
+############     MyHub     ###########
+######################################
+myhub:
+  title: MyHubs
+  connectTarget: Connect the target
+  viewMyHub: View My Hub
+  error: '[Error: could not connect]'
+  view: View
+  validationEmptySpace: Should not start with an empty space
+  validURL: Enter a valid URL
+  edit: Edit Hub
+  refresh: Refresh Hub
+  disconnect: Disconnect Hub
+  mainPage:
+    header: MyHubs
+    github: github.com/
+    availableHubs: Available chaos hubs
+    switchHub: You can switch between connected hubs or connect a new one.
+    devGuideHeader: You have no hubs currently connected. Start connecting your first hub.
+    devGuideDescription: You should have your litmus chaos hub forked and made ready before connecting to it.
+    connectNewHub: Connect a new chaos hub
+    noGithubCredentials: You have not given your Github credential
+    submitBtn: Submit Now
+    videoDescription: Get resilient and compliance scores for your Kuberenetes product
+    sync: Syncing Repo...
+    retry: Retry Connection
+    disconnectHeader: Are you sure you want to disconnect MyHub?
+    disconnectDesc: Action is not revertable
+    cancel: Cancel
+    deleteHub: Delete Hub
+    syncError: Failed while syncing repo, try again!
+  myhubChart:
+    header: MyHub
+    github: github.com/
+    syncingRepo: Loading Charts, Please Wait...!
+  connectHubPage:
+    connectHub: Connect a new chaos hub
+    enterInfo: Enter information in the required fields
+    connectBtn: Then click on the connect button
+    submitBtn: Submit Now
+    cloningText: Please wait while we are cloning your repo!
+    errorText: Error
+    creatingHub: while creating MyHub
+    newHub: A new chaos hub
+    success: is successfully created
+    newHubCreated: A new chaos hub will be added to the main page of the MyHubs section
+    myHub: Back to MyHubs
+    videoDesc: Get resilient and compliance scores for your Kuberenetes product
+    accessToken: Access Token
+    ssh: SSH
+    sshText: Please enable read / write access on the above git repository for the following key
+    sshAlert: '*Make sure to provide the SSH link of the Git Repository'
+    saveLater: Save for later
+    updateHub: Update the MyHub with correct details from the MyHubs section
+  videoCarousel:
+    video: Video Tips
+  installChaos:
+    copy: Copy
+    copied: Copied
+  usefulLink:
+    maintainer: Maintainers
+  experimentPage:
+    congrats: Congratulations! You have created a template for new experiment. Finish it on GitHub using a developer`s guide.
+    installExp: Install this Chaos Experiment
+    installExpDesc: You can install the Chaos Experiment using the following command
+    installRBAC: Setup Service Account (RBAC)
+    installRBACDesc: Create a service account using the following command
+    installEngine: Sample Chaos Engine
+    installEngineDesc: Copy and edit this sample Chaos Engine yaml according to your application needs
+  editPage:
+    edit: Edit the Hub
+    click: Then click on the update button
+    submit: Update MyHub
+    wait: Please wait while we are updating your repo!
+    updating: while updating MyHub
+    success: MyHub successfully updated
+    desc: MyHub will be updated in the main page of the MyHubs section
+    error: Error while updating MyHub
+
+######################################
+########   Custom Workflow     #######
+######################################
+customWorkflow:
+  createWorkflow:
+    create: Creating a new chaos workflow
+    createDesc: Add new experiments from your ChaosHubs defined at MyHubs section
+    workflowInfo: Workflow information
+    workflowName: Workflow Name
+    workflowDesc: Description
+    chooseNamespace: Choose Namespace
+    firstChaos: Choose the hub
+    selectHub: Select the hub
+    public: Public Hub
+    configure: Construct your workflow
+    construct: Using experiments from MyHubs
+    upload: Upload your
+    yaml: YAML
+    uploadFile: Select YAML file from your device
+    uploadSuccess: Successfully uploaded
+    drag: Drag & Drop YAML file to upload
+    chooseExp: Choose the experiment
+    loadingExp: Loading Experiments, please wait...
+    selectExp: Select the experiment
+    selectAnExp: Select an experiment
+    noExp: No experiments found
+    nextBtn: Next
+    uploadFailMessage: Failed to upload YAML, please check the syntax
+  scheduleWorkflow:
+    scheduleHeader: Schedule a new chaos workflow
+    addedExp: Your added experiments to the workflow
+    finishText: Tap finish to end or you can add a new experiments and edit the sequence of currently added experiments
+    experiment: Experiment
+    viewYAML: View YAML
+    editBtn: Edit
+    deleteBtn: Delete
+    addExp: Add a new experiment
+    finish: Finish adding experiments
+    proceed: Proceed to construct the
+    selection: YAML based on the experiment selection.
+    revert: Revert Chaos
+    unselect: Unselect the check box if you don't want to have revert chaos stage at the end of workflow.
+    cancel: Cancel
+    construct: Construct Workflow
+  tuneExperiment:
+    headerText: Tune the chaos engine
+    addKey: Add keys for add experiments
+    experimentInfo: Experiment information
+    expName: Experiment name
+    description: Description
+    sequence: Sequence
+    sequenceFirstExp: This is your first experiment
+    sequenceNotFirstExp: This Experiment will execute after
+    appInfo: Specify the appinfo for the experiment
+    envText: We have created a chaos engine specification for this experiment. You can tune the following variables for the chaos engine.
+    customEnvText: To change the variables in chaos experiment specific to this workflow, You can tune it here.
+    addEnv: Add Key
+    addExp: Add experiment
+  viewYAML:
+    view: View the YAML here
