@@ -55,7 +55,7 @@ jobs:
             kubectl get po --all-namespaces
       - run:
           name: Setup kubeconfig ENV for Chaos Action
-          command: echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 ~/.kube/config)
+          command: echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 ${HOME}/.kube/config)
       - run:
           name: Deploying a sample application (NGINX)
           command: |
