@@ -71,4 +71,5 @@ jobs:
             echo "export IMAGE_PULL_POLICY=IfNotPresent" >> $BASH_ENV
             echo "export LITMUS_CLEANUP=true" >> $BASH_ENV
             source $BASH_ENV
-            docker run litmuschaos/chaos-ci-lib@latest entrypoint="./pod-delete"
+            sleep 30
+            docker run litmuschaos/chaos-ci-lib -e entrypoint="./pod-delete"
