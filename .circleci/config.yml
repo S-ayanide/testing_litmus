@@ -72,4 +72,4 @@ jobs:
             echo "export LITMUS_CLEANUP=true" >> $BASH_ENV
             source $BASH_ENV
             sleep 30
-            docker run litmuschaos/chaos-ci-lib -e entrypoint="./pod-delete"
+            docker run litmuschaos/chaos-ci-lib entrypoint="./pod-delete"
