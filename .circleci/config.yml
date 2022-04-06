@@ -23,31 +23,21 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Setup kubectl
+          name: Install KinD
           command: |
-            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/${K8S_VERSION}/bin/linux/amd64/kubectl && chmod +x kubectl && sudo mv kubectl /usr/local/bin/
-            mkdir -p ${HOME}/.kube
-            touch ${HOME}/.kube/config
+            curl -Lo kind https://github.com/kubernetes-sigs/kind/releases/download/0.0.1/kind-linux-amd64
+            chmod +x kind
+            sudo mv kind /usr/local/bin/
       - run:
-          name: Setup minikube
+          name: Create Kubernetes Cluster
           command: |
-            curl -Lo minikube https://github.com/kubernetes/minikube/releases/download/${MINIKUBE_VERSION}/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+            kind create cluster
       - run:
-          name: Start minikube
+          name: Install kubectl
           command: |
-            sudo -E minikube start --vm-driver=none --cpus 2 --memory 4096 --kubernetes-version=${K8S_VERSION}
-      - run:
-          name: wait for minikube
-          command: |
-            JSONPATH='{range .items[*]}{@.metadata.name}:{range @.status.conditions[*]}{@.type}={@.status};{end}{end}';
-            until kubectl get nodes -o jsonpath="$JSONPATH" 2>&1 | grep -q "Ready=True"; do
-              sleep 1;
-            done
-      - run:
-          name: fix RBAC
-          command: |
-            # make default account cluster-admin
-            kubectl create clusterrolebinding add-on-cluster-admin --clusterrole cluster-admin --serviceaccount=kube-system:default
+            curl -Lo kubectl https://storage.googleapis.com/kubernetes-release/release/v1.12.0/bin/linux/amd64/kubectl
+            chmod +x kubectl
+            sudo mv kubectl /usr/local/bin/
       - run:
           name: dump cluster-info
           command: |
@@ -57,8 +47,7 @@ jobs:
           name: Setup kubeconfig ENV for Chaos Action
           command: |
             echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 ${HOME}/.kube/config)
-            echo ${HOME}/.kube/config
-            echo ${KUBE_CONFIG_DATA}
+            cat ${KUBE_CONFIG_DATA}
       - run:
           name: Deploying a sample application (NGINX)
           command: |
