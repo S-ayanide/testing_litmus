@@ -10,17 +10,21 @@ jobs:
   Tests:
     runs-on: ubuntu-18.04
     steps:
-      
-      - name: Installing Prerequisites (KinD Cluster)
-        uses: engineerd/setup-kind@v0.4.0
+      - name: Installing KinD cluster for the test
+        uses: engineerd/setup-kind@v0.5.0
         with:
             version: "v0.7.0"
 
       - name: Configuring and testing the Installation
         run: |
-          kubectl cluster-info --context kind-kind
+          kubectl taint nodes kind-control-plane node-role.kubernetes.io/master-
           kind get kubeconfig --internal >$HOME/.kube/config
-          kubectl get nodes            
+          kubectl cluster-info --context kind-kind
+          kubectl get nodes 
+
+      - name: Load docker image
+        run: /usr/local/bin/kind load docker-image litmuschaos/go-runner:ci  
+        
       - name: Deploy a sample application for chaos injection
         run: |
           kubectl apply -f https://raw.githubusercontent.com/litmuschaos/chaos-ci-lib/master/app/nginx.yml
