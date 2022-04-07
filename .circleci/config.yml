@@ -47,7 +47,7 @@ jobs:
       - run:
           name: Setup kubeconfig ENV for Chaos Action
           command: |
-            echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 ${HOME}/.kube/config)
+            echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 ${KUBECONFIG})
             cat ${KUBE_CONFIG_DATA}
       - run:
           name: Deploying a sample application (NGINX)
