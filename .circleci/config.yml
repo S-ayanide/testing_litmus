@@ -39,10 +39,11 @@ jobs:
             chmod +x kubectl
             sudo mv kubectl /usr/local/bin/
       - run:
-          name: dump cluster-info
+          name: Run Tests
           command: |
+            export KUBECONFIG="$(kind get kubeconfig-path)"
             kubectl cluster-info
-            kubectl get po --all-namespaces
+            kubectl get pods --all-namespaces
       - run:
           name: Setup kubeconfig ENV for Chaos Action
           command: |
