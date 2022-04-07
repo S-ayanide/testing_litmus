@@ -10,9 +10,6 @@ jobs:
   Tests:
     runs-on: ubuntu-18.04
     steps:
-      - name: Generating Go binary and Building docker image
-        run: |
-          make build-amd64
       - name: Create KinD Cluster
         run: kind create cluster --config config/kind-config.yaml
 
