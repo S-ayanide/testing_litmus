@@ -18,6 +18,10 @@ jobs:
           kubectl cluster-info --context kind-kind
           kubectl wait node --all --for condition=ready --timeout=90s
           kubectl get nodes
+          
+      - name: Build docker image
+        run: |
+          sudo docker run -d litmuschaos/go-runner:ci
 
       - name: Load docker image
         run: /usr/local/bin/kind load docker-image litmuschaos/go-runner:ci
