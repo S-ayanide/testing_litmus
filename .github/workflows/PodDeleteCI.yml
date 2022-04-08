@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-18.04
     steps:
       - name: Create KinD Cluster
-        run: kind create cluster --config config/kind-config.yaml
+        run: kind create cluster
 
       - name: Configuring and testing the Installation
         run: |
