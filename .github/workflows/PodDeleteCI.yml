@@ -10,22 +10,18 @@ jobs:
   Our-Chaos-Action:
     runs-on: ubuntu-18.04
     steps:
-      - uses: actions/checkout@v2
 
-      - name: Generating Go binary and Building docker image
-        run: |
-          make build-amd64
-      #Install and configure a kind cluster
-      - name: Installing Prerequisites (KinD Cluster)
-        uses: engineerd/setup-kind@v0.5.0
-        with:
-          version: "v0.7.0"
+      - uses: actions/checkout@master
 
-      - name: Configuring and testing the Installation
+      - uses: engineerd/setup-kind@v0.5.0
+      
+      - name: Testing
         run: |
-          kubectl cluster-info --context kind-kind
-          kind get kubeconfig --internal >$HOME/.kube/config
-          kubectl get nodes
+          kubectl cluster-info
+          kubectl get pods -n kube-system
+          echo "current-context:" $(kubectl config current-context)
+          echo "environment-kubeconfig:" ${KUBECONFIG}
+
       - name: Load image on the nodes of the cluster
         run: |
           kind load docker-image --name=kind litmuschaos/go-runner:ci
