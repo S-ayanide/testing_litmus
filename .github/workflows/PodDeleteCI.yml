@@ -10,7 +10,7 @@ jobs:
   Our-Chaos-Action:
     runs-on: ubuntu-latest
     env:
-      KUBECONFIG: ~/.kube/config
+      KUBECONFIG: $HOME/.kube/config
     steps:
 
       - uses: actions/checkout@master
