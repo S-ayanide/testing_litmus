@@ -15,6 +15,15 @@ jobs:
 
       - uses: actions/checkout@master
 
+      - name: Clone Litmus Go
+        run: |
+          git clone https://github.com/litmuschaos/litmus-go.git
+          
+      - name: CD
+        run: |
+          cd litmus-go
+          ls
+          
       - name: Create KinD Cluster
         run: |
           kind create cluster
