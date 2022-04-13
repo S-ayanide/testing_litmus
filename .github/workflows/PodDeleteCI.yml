@@ -16,7 +16,9 @@ jobs:
       - uses: actions/checkout@master
 
       - name: Create KinD Cluster
-        run: kind create cluster
+        run: |
+          kind create cluster
+          kind get kubeconfig --internal >$HOME/.kube/config
 
       - name: Deploy a sample application for chaos injection
         run: |
