@@ -18,7 +18,7 @@ jobs:
       - name: Create KinD Cluster
         run: |
           kind create cluster
-          kind get kubeconfig --internal >$HOME/.kube/config
+          kind get kubeconfig --internal > ~/.kube/config
 
       - name: Deploy a sample application for chaos injection
         run: |
