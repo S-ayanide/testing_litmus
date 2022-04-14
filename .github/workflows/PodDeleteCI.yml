@@ -40,10 +40,14 @@ jobs:
         run: echo ::set-env name=KUBE_CONFIG_DATA::$(base64 -w 0 $KUBECONFIG)
         env:
           ACTIONS_ALLOW_UNSECURE_COMMANDS: true
+      
+      - uses: actions/checkout@v2
+        with:
+          repository: 'litmuschaos/litmus-e2e'
+          ref: 'master'
 
       - name: Setup litmus and deploy application
         run: |
-          cd litmus-go
           make build-litmus
           make app-deploy
           
